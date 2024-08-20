@@ -34,12 +34,15 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            button1 = new Button();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
             SuspendLayout();
             // 
             // bntConfirma
             // 
             bntConfirma.Enabled = false;
-            bntConfirma.Location = new Point(478, 326);
+            bntConfirma.Location = new Point(306, 282);
             bntConfirma.Name = "bntConfirma";
             bntConfirma.Size = new Size(75, 23);
             bntConfirma.TabIndex = 0;
@@ -49,7 +52,7 @@
             // 
             // txtNumero2
             // 
-            txtNumero2.Location = new Point(453, 92);
+            txtNumero2.Location = new Point(281, 48);
             txtNumero2.Name = "txtNumero2";
             txtNumero2.Size = new Size(100, 23);
             txtNumero2.TabIndex = 1;
@@ -59,7 +62,7 @@
             // 
             lstResultado.FormattingEnabled = true;
             lstResultado.ItemHeight = 15;
-            lstResultado.Location = new Point(211, 121);
+            lstResultado.Location = new Point(39, 77);
             lstResultado.Name = "lstResultado";
             lstResultado.Size = new Size(342, 199);
             lstResultado.TabIndex = 2;
@@ -70,7 +73,7 @@
             cmbOperacao.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbOperacao.FormattingEnabled = true;
             cmbOperacao.Items.AddRange(new object[] { "Multiplicação", "Divisão", "Adição", "Subtração", "Exponenciação", "Radiciação", "Logaritmos" });
-            cmbOperacao.Location = new Point(211, 92);
+            cmbOperacao.Location = new Point(39, 48);
             cmbOperacao.Name = "cmbOperacao";
             cmbOperacao.Size = new Size(121, 23);
             cmbOperacao.TabIndex = 3;
@@ -78,7 +81,7 @@
             // 
             // txtNumero1
             // 
-            txtNumero1.Location = new Point(343, 92);
+            txtNumero1.Location = new Point(171, 48);
             txtNumero1.Name = "txtNumero1";
             txtNumero1.Size = new Size(100, 23);
             txtNumero1.TabIndex = 4;
@@ -87,7 +90,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(343, 74);
+            label1.Location = new Point(171, 30);
             label1.Name = "label1";
             label1.Size = new Size(62, 15);
             label1.TabIndex = 5;
@@ -96,7 +99,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(453, 74);
+            label2.Location = new Point(281, 30);
             label2.Name = "label2";
             label2.Size = new Size(62, 15);
             label2.TabIndex = 6;
@@ -106,17 +109,44 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(211, 74);
+            label3.Location = new Point(39, 30);
             label3.Name = "label3";
             label3.Size = new Size(58, 15);
             label3.TabIndex = 7;
             label3.Text = "Operação";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(642, 311);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 8;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(464, 282);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 9;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(570, 282);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(100, 23);
+            textBox2.TabIndex = 10;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 453);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
+            Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -141,6 +171,9 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Button button1;
+        private TextBox textBox1;
+        private TextBox textBox2;
     }
 
 }
