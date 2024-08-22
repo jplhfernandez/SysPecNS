@@ -50,7 +50,7 @@ namespace SysPecNSLib
             cmd.CommandText = $"insert niveis (id, nome, sigla) values (0, '{Nome}' , '{Sigla}' )";
             cmd.ExecuteNonQuery();
         }
-        public static Nivel ObterPorIdI(int id)
+        public static Nivel ObterPorId(int id)
         {
             Nivel nivel = new();
             //consulta no banco e retornar
@@ -100,7 +100,12 @@ namespace SysPecNSLib
         }
         public void Excluir(int id)
         {
-
+            //em geral nada se exclui de uma tabela...
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"delete from niveis where id = {Id}";
+            cmd.ExecuteNonQuery();
+            
         }
     }
 }
