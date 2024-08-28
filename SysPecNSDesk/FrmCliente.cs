@@ -17,22 +17,6 @@ namespace SysPecNSDesk
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnInserir_Click(object sender, EventArgs e)
         {
             Cliente cliente = new(
@@ -59,16 +43,6 @@ namespace SysPecNSDesk
             {
                 MessageBox.Show("Falha ao gravar cliente");
             }
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

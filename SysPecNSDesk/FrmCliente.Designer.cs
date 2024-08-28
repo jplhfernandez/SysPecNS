@@ -60,7 +60,6 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(347, 23);
             txtNome.TabIndex = 1;
-            txtNome.TextChanged += textBox2_TextChanged;
             // 
             // label1
             // 
@@ -70,7 +69,6 @@
             label1.Size = new Size(18, 15);
             label1.TabIndex = 2;
             label1.Text = "ID";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -98,7 +96,6 @@
             label4.Size = new Size(51, 15);
             label4.TabIndex = 5;
             label4.Text = "Telefone";
-            label4.Click += label4_Click;
             // 
             // label5
             // 
@@ -167,7 +164,6 @@
             label7.Size = new Size(28, 15);
             label7.TabIndex = 13;
             label7.Text = "CPF";
-            label7.Click += label7_Click;
             // 
             // dtpNascimento
             // 
@@ -185,7 +181,6 @@
             dtpCadastro.Name = "dtpCadastro";
             dtpCadastro.Size = new Size(197, 23);
             dtpCadastro.TabIndex = 15;
-            dtpCadastro.ValueChanged += dateTimePicker2_ValueChanged;
             // 
             // FrmCliente
             // 
