@@ -99,7 +99,6 @@ namespace SysPecNSDesk
                     dgvUsuarios.Rows[cont].Cells[2].Value = usuario.Email;
                     dgvUsuarios.Rows[cont].Cells[3].Value = usuario.Nivel.Nome;
                     dgvUsuarios.Rows[cont].Cells[4].Value = usuario.Ativo;
-
                     cont++;
                 }
         }
