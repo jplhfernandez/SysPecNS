@@ -10,6 +10,7 @@ namespace SysPecNSLib
     {
         //public int Id {  get; set; }
         //public string Cliente_Id {  get; set; }
+        //public string
         
     }
 }
