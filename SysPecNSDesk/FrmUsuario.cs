@@ -20,7 +20,10 @@ namespace SysPecNSDesk
 
         private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int id = 0;
+            int posicaoLinha = dgvUsuarios.CurrentRow.Index;
+            id = Convert.ToInt32(dgvUsuarios.Rows[0].Cells[0].Value);
+            MessageBox.Show(id.ToString());
         }
 
         private void FrmUsuario_Load(object sender, EventArgs e)
@@ -68,7 +71,7 @@ namespace SysPecNSDesk
 
         private void txtBusca_TextChanged(object sender, EventArgs e)
         {
-            if (txtBusca.Text.Length>0)
+            if (txtBusca.Text.Length > 0)
             {
                 CarregaGrid(txtBusca.Text);
             }
@@ -77,30 +80,60 @@ namespace SysPecNSDesk
                 CarregaGrid();
             }
         }
-        private void CarregaGrid(string nome="")
+        private void CarregaGrid(string nome = "")
         {
-                // preenchendo o datagrid com os usuarios
-                //if (nome == "")
-                //{
-                //    var lista = Usuario.ObterLista();
-                //}
-                //else
-                //{
-                    var lista = Usuario.ObterLista(nome);
-                //}
+            // preenchendo o datagrid com os usuarios
+            //if (nome == "")
+            //{
+            //    var lista = Usuario.ObterLista();
+            //}
+            //else
+            //{
+            var lista = Usuario.ObterLista(nome);
+            //}
 
-                dgvUsuarios.Rows.Clear();
-                int cont = 0;
-                foreach (var usuario in lista)
-                {
-                    dgvUsuarios.Rows.Add();
-                    dgvUsuarios.Rows[cont].Cells[0].Value = usuario.Id;
-                    dgvUsuarios.Rows[cont].Cells[1].Value = usuario.Nome;
-                    dgvUsuarios.Rows[cont].Cells[2].Value = usuario.Email;
-                    dgvUsuarios.Rows[cont].Cells[3].Value = usuario.Nivel.Nome;
-                    dgvUsuarios.Rows[cont].Cells[4].Value = usuario.Ativo;
-                    cont++;
-                }
+            dgvUsuarios.Rows.Clear();
+            int cont = 0;
+            foreach (var usuario in lista)
+            {
+                dgvUsuarios.Rows.Add();
+                dgvUsuarios.Rows[cont].Cells[0].Value = usuario.Id;
+                dgvUsuarios.Rows[cont].Cells[1].Value = usuario.Nome;
+                dgvUsuarios.Rows[cont].Cells[2].Value = usuario.Email;
+                dgvUsuarios.Rows[cont].Cells[3].Value = usuario.Nivel.Nome;
+                dgvUsuarios.Rows[cont].Cells[4].Value = usuario.Ativo;
+                cont++;
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (VerificandoControles())
+            {
+                var msg = MessageBox.Show("Deseja continuar o cadastro?", 
+                    "Confirmação de saída", 
+                    MessageBoxButtons.YesNo, 
+                    MessageBoxIcon.Warning, 
+                    MessageBoxDefaultButton.Button1);
+                if (msg == DialogResult.No) this.Close();
+            }
+            else { this.Close(); }
+        }
+
+        private bool VerificandoControles()
+        {
+            if (txtNome.Text != string.Empty 
+                || txtEmail.Text != string.Empty
+                || txtSenha.Text != string.Empty
+                )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }
