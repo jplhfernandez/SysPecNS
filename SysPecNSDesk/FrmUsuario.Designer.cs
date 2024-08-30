@@ -60,14 +60,14 @@
             dgvUsuarios.AllowUserToAddRows = false;
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { clnId, clnNome, clnEmail, clnNivel, clnAtivo });
-            dgvUsuarios.Location = new Point(153, 272);
+            dgvUsuarios.Location = new Point(97, 265);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.ReadOnly = true;
             dgvUsuarios.RowHeadersVisible = false;
             dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvUsuarios.Size = new Size(500, 150);
             dgvUsuarios.TabIndex = 9;
-            dgvUsuarios.CellContentClick += dgvUsuarios_CellContentClick;
+            dgvUsuarios.CellClick += dgvUsuarios_CellClick;
             // 
             // clnId
             // 
@@ -116,7 +116,7 @@
             btnInserir.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 255, 192);
             btnInserir.FlatStyle = FlatStyle.Popup;
             btnInserir.Image = Properties.Resources.Add;
-            btnInserir.Location = new Point(414, 168);
+            btnInserir.Location = new Point(106, 421);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(75, 52);
             btnInserir.TabIndex = 5;
@@ -128,7 +128,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(153, 38);
+            label1.Location = new Point(101, 35);
             label1.Name = "label1";
             label1.Size = new Size(18, 15);
             label1.TabIndex = 10;
@@ -138,7 +138,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(203, 38);
+            label2.Location = new Point(160, 35);
             label2.Name = "label2";
             label2.Size = new Size(40, 15);
             label2.TabIndex = 11;
@@ -147,7 +147,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(153, 108);
+            label3.Location = new Point(97, 101);
             label3.Name = "label3";
             label3.Size = new Size(36, 15);
             label3.TabIndex = 12;
@@ -156,7 +156,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(454, 108);
+            label4.Location = new Point(398, 101);
             label4.Name = "label4";
             label4.Size = new Size(34, 15);
             label4.TabIndex = 13;
@@ -165,7 +165,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(153, 168);
+            label5.Location = new Point(97, 161);
             label5.Name = "label5";
             label5.Size = new Size(39, 15);
             label5.TabIndex = 15;
@@ -173,7 +173,7 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(149, 66);
+            txtId.Location = new Point(97, 63);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
             txtId.Size = new Size(48, 23);
@@ -181,22 +181,22 @@
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(203, 66);
+            txtNome.Location = new Point(160, 63);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(450, 23);
+            txtNome.Size = new Size(441, 23);
             txtNome.TabIndex = 0;
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(153, 196);
+            txtSenha.Location = new Point(97, 189);
             txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(108, 23);
+            txtSenha.Size = new Size(225, 23);
             txtSenha.TabIndex = 3;
             txtSenha.UseSystemPasswordChar = true;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(153, 136);
+            txtEmail.Location = new Point(97, 129);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(285, 23);
             txtEmail.TabIndex = 1;
@@ -204,7 +204,7 @@
             // chkAtivo
             // 
             chkAtivo.AutoSize = true;
-            chkAtivo.Location = new Point(599, 138);
+            chkAtivo.Location = new Point(541, 191);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
             chkAtivo.TabIndex = 14;
@@ -214,15 +214,15 @@
             // cmbNivel
             // 
             cmbNivel.FormattingEnabled = true;
-            cmbNivel.Location = new Point(454, 136);
+            cmbNivel.Location = new Point(398, 129);
             cmbNivel.Name = "cmbNivel";
-            cmbNivel.Size = new Size(139, 23);
+            cmbNivel.Size = new Size(197, 23);
             cmbNivel.TabIndex = 2;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(267, 168);
+            label6.Location = new Point(328, 161);
             label6.Name = "label6";
             label6.Size = new Size(96, 15);
             label6.TabIndex = 16;
@@ -230,9 +230,9 @@
             // 
             // txtConfSenha
             // 
-            txtConfSenha.Location = new Point(267, 196);
+            txtConfSenha.Location = new Point(328, 189);
             txtConfSenha.Name = "txtConfSenha";
-            txtConfSenha.Size = new Size(128, 23);
+            txtConfSenha.Size = new Size(186, 23);
             txtConfSenha.TabIndex = 4;
             txtConfSenha.UseSystemPasswordChar = true;
             // 
@@ -240,7 +240,7 @@
             // 
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Image = Properties.Resources.Edit;
-            btnEditar.Location = new Point(495, 168);
+            btnEditar.Location = new Point(241, 421);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 52);
             btnEditar.TabIndex = 6;
@@ -252,7 +252,7 @@
             // 
             btnDeletar.FlatStyle = FlatStyle.Popup;
             btnDeletar.Image = Properties.Resources.Delete;
-            btnDeletar.Location = new Point(576, 168);
+            btnDeletar.Location = new Point(376, 421);
             btnDeletar.Name = "btnDeletar";
             btnDeletar.Size = new Size(75, 52);
             btnDeletar.TabIndex = 7;
@@ -262,7 +262,7 @@
             // 
             // txtBusca
             // 
-            txtBusca.Location = new Point(153, 230);
+            txtBusca.Location = new Point(97, 223);
             txtBusca.Name = "txtBusca";
             txtBusca.Size = new Size(500, 23);
             txtBusca.TabIndex = 8;
@@ -272,7 +272,7 @@
             // 
             btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.Image = Properties.Resources.Cancel;
-            btnCancelar.Location = new Point(657, 168);
+            btnCancelar.Location = new Point(511, 421);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 52);
             btnCancelar.TabIndex = 18;
@@ -287,7 +287,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnCancelar;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(702, 552);
             Controls.Add(btnCancelar);
             Controls.Add(txtBusca);
             Controls.Add(btnDeletar);

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SysPecNSDesk
 {
-    public partial class FrmEndereco : Form
+    public partial class FrmClienteEndereco : Form
     {
-        public FrmEndereco()
+        public FrmClienteEndereco()
         {
             InitializeComponent();
         }

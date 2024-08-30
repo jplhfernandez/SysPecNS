@@ -18,14 +18,6 @@ namespace SysPecNSDesk
             InitializeComponent();
         }
 
-        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int id = 0;
-            int posicaoLinha = dgvUsuarios.CurrentRow.Index;
-            id = Convert.ToInt32(dgvUsuarios.Rows[0].Cells[0].Value);
-            MessageBox.Show(id.ToString());
-        }
-
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
             //carregando o combobox com os niveis
@@ -110,10 +102,10 @@ namespace SysPecNSDesk
         {
             if (VerificandoControles())
             {
-                var msg = MessageBox.Show("Deseja continuar o cadastro?", 
-                    "Confirmação de saída", 
-                    MessageBoxButtons.YesNo, 
-                    MessageBoxIcon.Warning, 
+                var msg = MessageBox.Show("Deseja continuar o cadastro?",
+                    "Confirmação de saída",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning,
                     MessageBoxDefaultButton.Button1);
                 if (msg == DialogResult.No) this.Close();
             }
@@ -122,7 +114,7 @@ namespace SysPecNSDesk
 
         private bool VerificandoControles()
         {
-            if (txtNome.Text != string.Empty 
+            if (txtNome.Text != string.Empty
                 || txtEmail.Text != string.Empty
                 || txtSenha.Text != string.Empty
                 )
@@ -133,7 +125,14 @@ namespace SysPecNSDesk
             {
                 return false;
             }
+        }
 
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = 0;
+            int posicaoLinha = dgvUsuarios.CurrentRow.Index;
+            id = Convert.ToInt32(dgvUsuarios.Rows[0].Cells[0].Value);
+            MessageBox.Show(id.ToString());
         }
     }
 }
