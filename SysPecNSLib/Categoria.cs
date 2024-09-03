@@ -17,6 +17,12 @@ namespace SysPecNSLib
         { 
         }
 
+        public Categoria(int id, string? nome)
+        {
+            Id = id;
+            Nome = nome;
+        }
+
         public Categoria(string? nome, string? sigla)
         {
             Nome = nome;
@@ -52,12 +58,12 @@ namespace SysPecNSLib
                 categoria =  new(
                     dr.GetInt32(0), 
                     dr.GetString(1), 
-                    dr.GetString(2)
+                    null
                     );
             }
             return categoria;
         }
-        public List<Categoria> ObterLista()
+        public static List<Categoria> ObterLista()
         {
             List<Categoria> categorias = new();
             var cmd = Banco.Abrir();
@@ -68,8 +74,9 @@ namespace SysPecNSLib
                 categorias.Add(new(
                     dr.GetInt32(0),
                     dr.GetString(1),
-                    dr.GetString(2)
+                    null
                     ));
+                    // sigla colocada como NULO
             }
             return categorias;
         }
