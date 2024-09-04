@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProduto));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -49,7 +50,6 @@
             btnConsultar = new Button();
             npEstoMinimo = new NumericUpDown();
             dgvProdutos = new DataGridView();
-            groupBox1 = new GroupBox();
             clnId = new DataGridViewTextBoxColumn();
             clnCodigoDeBarras = new DataGridViewTextBoxColumn();
             clnDescricao = new DataGridViewTextBoxColumn();
@@ -59,6 +59,7 @@
             clnEstoqueMinimo = new DataGridViewTextBoxColumn();
             clnDesconto = new DataGridViewTextBoxColumn();
             clnDataDeCadastro = new DataGridViewTextBoxColumn();
+            groupBox1 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)npEstoMinimo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).BeginInit();
             groupBox1.SuspendLayout();
@@ -85,7 +86,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(151, 230);
+            label3.Location = new Point(172, 78);
             label3.Name = "label3";
             label3.Size = new Size(58, 15);
             label3.TabIndex = 2;
@@ -94,7 +95,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(279, 166);
+            label4.Location = new Point(42, 142);
             label4.Name = "label4";
             label4.Size = new Size(78, 15);
             label4.TabIndex = 3;
@@ -112,7 +113,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(287, 78);
+            label6.Location = new Point(161, 142);
             label6.Name = "label6";
             label6.Size = new Size(102, 15);
             label6.TabIndex = 5;
@@ -130,7 +131,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(414, 78);
+            label8.Location = new Point(442, 78);
             label8.Name = "label8";
             label8.Size = new Size(94, 15);
             label8.TabIndex = 7;
@@ -153,14 +154,14 @@
             // 
             // txtValorUnitario
             // 
-            txtValorUnitario.Location = new Point(279, 193);
+            txtValorUnitario.Location = new Point(42, 171);
             txtValorUnitario.Name = "txtValorUnitario";
             txtValorUnitario.Size = new Size(100, 23);
             txtValorUnitario.TabIndex = 10;
             // 
             // txtUnidadeDeVenda
             // 
-            txtUnidadeDeVenda.Location = new Point(399, 193);
+            txtUnidadeDeVenda.Location = new Point(161, 171);
             txtUnidadeDeVenda.Name = "txtUnidadeDeVenda";
             txtUnidadeDeVenda.PlaceholderText = "Ex: Caixa";
             txtUnidadeDeVenda.Size = new Size(100, 23);
@@ -168,17 +169,18 @@
             // 
             // txtDescricao
             // 
-            txtDescricao.Location = new Point(152, 259);
+            txtDescricao.Location = new Point(172, 105);
             txtDescricao.Name = "txtDescricao";
-            txtDescricao.Size = new Size(227, 23);
+            txtDescricao.Size = new Size(255, 23);
             txtDescricao.TabIndex = 12;
             // 
             // cmbCategoria
             // 
+            cmbCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCategoria.FormattingEnabled = true;
             cmbCategoria.Location = new Point(387, 259);
             cmbCategoria.Name = "cmbCategoria";
-            cmbCategoria.Size = new Size(231, 23);
+            cmbCategoria.Size = new Size(259, 23);
             cmbCategoria.TabIndex = 13;
             cmbCategoria.SelectedIndexChanged += cmbCategoria_SelectedIndexChanged;
             // 
@@ -187,7 +189,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Consolas", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = SystemColors.ActiveCaptionText;
-            label9.Location = new Point(271, 29);
+            label9.Location = new Point(271, 18);
             label9.Name = "label9";
             label9.Size = new Size(232, 56);
             label9.TabIndex = 14;
@@ -197,14 +199,14 @@
             // 
             txtDesconto.Location = new Point(152, 324);
             txtDesconto.Name = "txtDesconto";
-            txtDesconto.Size = new Size(131, 23);
+            txtDesconto.Size = new Size(162, 23);
             txtDesconto.TabIndex = 15;
             // 
             // btnInserir
             // 
             btnInserir.Cursor = Cursors.Hand;
             btnInserir.FlatStyle = FlatStyle.Popup;
-            btnInserir.Location = new Point(313, 324);
+            btnInserir.Location = new Point(237, 236);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(75, 23);
             btnInserir.TabIndex = 16;
@@ -216,29 +218,31 @@
             // 
             btnEditar.Cursor = Cursors.Hand;
             btnEditar.FlatStyle = FlatStyle.Popup;
-            btnEditar.Location = new Point(428, 323);
+            btnEditar.Location = new Point(349, 235);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 23);
             btnEditar.TabIndex = 17;
             btnEditar.Text = "&Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnConsultar
             // 
             btnConsultar.Cursor = Cursors.Hand;
             btnConsultar.FlatStyle = FlatStyle.Popup;
-            btnConsultar.Location = new Point(543, 324);
+            btnConsultar.Location = new Point(461, 236);
             btnConsultar.Name = "btnConsultar";
             btnConsultar.Size = new Size(75, 23);
             btnConsultar.TabIndex = 18;
             btnConsultar.Text = "&Consultar";
             btnConsultar.UseVisualStyleBackColor = true;
+            btnConsultar.Click += btnConsultar_Click;
             // 
             // npEstoMinimo
             // 
-            npEstoMinimo.Location = new Point(414, 105);
+            npEstoMinimo.Location = new Point(442, 106);
             npEstoMinimo.Name = "npEstoMinimo";
-            npEstoMinimo.Size = new Size(47, 23);
+            npEstoMinimo.Size = new Size(94, 23);
             npEstoMinimo.TabIndex = 19;
             // 
             // dgvProdutos
@@ -254,19 +258,6 @@
             dgvProdutos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProdutos.Size = new Size(555, 182);
             dgvProdutos.TabIndex = 20;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(npEstoMinimo);
-            groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Location = new Point(110, 88);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(555, 284);
-            groupBox1.TabIndex = 21;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Produtos";
             // 
             // clnId
             // 
@@ -332,31 +323,45 @@
             clnDataDeCadastro.ReadOnly = true;
             clnDataDeCadastro.Width = 125;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(npEstoMinimo);
+            groupBox1.Controls.Add(btnConsultar);
+            groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(btnEditar);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(btnInserir);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(txtValorUnitario);
+            groupBox1.Controls.Add(txtDescricao);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(txtUnidadeDeVenda);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Location = new Point(110, 88);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(555, 284);
+            groupBox1.TabIndex = 21;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Produtos";
+            // 
             // FrmProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(814, 603);
             Controls.Add(dgvProdutos);
-            Controls.Add(btnConsultar);
-            Controls.Add(btnEditar);
-            Controls.Add(btnInserir);
             Controls.Add(txtDesconto);
             Controls.Add(label9);
             Controls.Add(cmbCategoria);
-            Controls.Add(txtDescricao);
-            Controls.Add(txtUnidadeDeVenda);
-            Controls.Add(txtValorUnitario);
             Controls.Add(txtCodigoDeBarras);
             Controls.Add(txtId);
             Controls.Add(label7);
-            Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(groupBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmProduto";
-            Text = "FrmProduto";
+            Text = "Produtos";
             Load += FrmProduto_Load;
             ((System.ComponentModel.ISupportInitialize)npEstoMinimo).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).EndInit();

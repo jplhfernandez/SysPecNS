@@ -51,8 +51,8 @@ namespace SysPecNSDesk
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            Produto produto = new(txtCodigoDeBarras.Text, txtDescricao.Text, double.Parse(txtValorUnitario.Text), 
-                txtUnidadeDeVenda.Text, Categoria.ObterPorId(Convert.ToInt32(cmbCategoria.SelectedValue)), 
+            Produto produto = new(txtCodigoDeBarras.Text, txtDescricao.Text, double.Parse(txtValorUnitario.Text),
+                txtUnidadeDeVenda.Text, Categoria.ObterPorId(Convert.ToInt32(cmbCategoria.SelectedValue)),
                 (int)npEstoMinimo.Value, double.Parse(txtDesconto.Text)
                 );
             produto.Inserir();
@@ -61,6 +61,70 @@ namespace SysPecNSDesk
                 MessageBox.Show($"Produto gravado com sucesso com o ID {produto.Id}");
                 FrmProduto_Load(sender, e);
             }
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            if (btnConsultar.Text == "&Consultar")
+            {
+                LimpaControles();
+                btnConsultar.Text = "&Obter por ID";
+                txtId.Focus();
+                txtId.ReadOnly = false;
+            }
+            else if (txtId.Text.Length > 0)
+            {
+                Produto produto = Produto.ObterPorId(int.Parse(txtId.Text));
+                txtCodigoDeBarras.Text = produto.CodBar;
+                txtValorUnitario.Text = Convert.ToString(produto.ValorUnit);// uma forma de converter
+                txtDescricao.Text = produto.Descricao;
+                txtDesconto.Text = produto.ClasseDesconto.ToString();// outra forma
+                txtUnidadeDeVenda.Text = produto.UnidadeVenda;
+                cmbCategoria.SelectedIndex = cmbCategoria.FindString(produto.Categoria.Nome);
+                btnEditar.Enabled = true;
+                btnConsultar.Text = "&Limpar";
+            }
+            else if (btnConsultar.Text == "&Limpar")
+            {
+                LimpaControles();
+                btnConsultar.Text = "&Consultar";
+                txtCodigoDeBarras.Focus();
+                txtId.ReadOnly = true;
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Produto produto = new(
+                int.Parse(txtId.Text),
+                txtCodigoDeBarras.Text,
+                txtDescricao.Text,
+                double.Parse(txtValorUnitario.Text),
+                txtUnidadeDeVenda.Text,
+                Categoria.ObterPorId(Convert.ToInt32(cmbCategoria.SelectedValue)),
+                (double)npEstoMinimo.Value,
+                double.Parse(txtDesconto.Text),
+                null,
+                null
+                );
+            produto.Atualizar();//grava alterações no banco
+            MessageBox.Show($"Produto {produto.Descricao} atualizado com sucesso");
+            btnEditar.Enabled = false;
+            txtId.ReadOnly = true;
+            btnConsultar.Text = "&Consultar";
+            LimpaControles();
+            FrmProduto_Load(sender, e);
+        }
+
+        private void LimpaControles()
+        {
+            txtCodigoDeBarras.Clear();
+            txtDescricao.Clear();
+            txtUnidadeDeVenda.Clear();
+            txtValorUnitario.Clear();
+            txtDesconto.Clear();
+            npEstoMinimo.Value = 0;
+            cmbCategoria.SelectedIndex = 0;
         }
     }
 }
