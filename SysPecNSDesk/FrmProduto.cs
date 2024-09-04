@@ -72,7 +72,7 @@ namespace SysPecNSDesk
                 txtId.Focus();
                 txtId.ReadOnly = false;
             }
-            else if (txtId.Text.Length > 0)
+            else if (txtId.Text.Length > 0 /*&& btnConsultar.Text == "&Obter por ID"*/)
             {
                 Produto produto = Produto.ObterPorId(int.Parse(txtId.Text));
                 txtCodigoDeBarras.Text = produto.CodBar;
@@ -83,13 +83,14 @@ namespace SysPecNSDesk
                 cmbCategoria.SelectedIndex = cmbCategoria.FindString(produto.Categoria.Nome);
                 btnEditar.Enabled = true;
                 btnConsultar.Text = "&Limpar";
-            }
-            else if (btnConsultar.Text == "&Limpar")
-            {
-                LimpaControles();
-                btnConsultar.Text = "&Consultar";
-                txtCodigoDeBarras.Focus();
-                txtId.ReadOnly = true;
+                
+                if (btnConsultar.PerformClick && btnConsultar.Text == "&Limpar")
+                {
+                    LimpaControles();
+                    txtCodigoDeBarras.Focus();
+                    txtId.ReadOnly = true;
+                    btnConsultar.Text = "&Consultar";
+                }
             }
         }
 
