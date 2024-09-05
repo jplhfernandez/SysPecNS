@@ -84,7 +84,7 @@ namespace SysPecNSDesk
                 btnEditar.Enabled = true;
                 btnConsultar.Text = "&Limpar";
                 
-                if (btnConsultar.PerformClick && btnConsultar.Text == "&Limpar")
+                if (btnConsultar.PerformClick)
                 {
                     LimpaControles();
                     txtCodigoDeBarras.Focus();

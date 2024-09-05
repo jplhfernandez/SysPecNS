@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SysPecNSLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace SysPecNSDesk
         public FrmFornecedor()
         {
             InitializeComponent();
+        }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            Fornecedor fornecedor = new(
+                );
         }
     }
 }
