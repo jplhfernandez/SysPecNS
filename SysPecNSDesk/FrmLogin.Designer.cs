@@ -115,6 +115,7 @@
             Controls.Add(btnLogar);
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += FrmLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

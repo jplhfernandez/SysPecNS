@@ -195,7 +195,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
-            Cursor = Cursors.AppStarting;
+            Cursor = Cursors.Arrow;
             Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
