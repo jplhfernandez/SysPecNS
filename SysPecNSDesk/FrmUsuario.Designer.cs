@@ -60,7 +60,7 @@
             dgvUsuarios.AllowUserToAddRows = false;
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { clnId, clnNome, clnEmail, clnNivel, clnAtivo });
-            dgvUsuarios.Location = new Point(95, 252);
+            dgvUsuarios.Location = new Point(97, 265);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.ReadOnly = true;
             dgvUsuarios.RowHeadersVisible = false;
@@ -128,7 +128,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(101, 35);
+            label1.Location = new Point(101, 45);
             label1.Name = "label1";
             label1.Size = new Size(18, 15);
             label1.TabIndex = 10;
@@ -138,7 +138,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(160, 35);
+            label2.Location = new Point(160, 45);
             label2.Name = "label2";
             label2.Size = new Size(40, 15);
             label2.TabIndex = 11;
@@ -147,7 +147,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(97, 101);
+            label3.Location = new Point(101, 111);
             label3.Name = "label3";
             label3.Size = new Size(36, 15);
             label3.TabIndex = 12;
@@ -156,7 +156,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(398, 101);
+            label4.Location = new Point(398, 111);
             label4.Name = "label4";
             label4.Size = new Size(34, 15);
             label4.TabIndex = 13;
@@ -165,7 +165,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(97, 161);
+            label5.Location = new Point(101, 171);
             label5.Name = "label5";
             label5.Size = new Size(39, 15);
             label5.TabIndex = 15;
@@ -222,7 +222,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(328, 161);
+            label6.Location = new Point(328, 171);
             label6.Name = "label6";
             label6.Size = new Size(96, 15);
             label6.TabIndex = 16;

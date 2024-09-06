@@ -84,13 +84,13 @@ namespace SysPecNSDesk
                 btnEditar.Enabled = true;
                 btnConsultar.Text = "&Limpar";
                 
-                if (btnConsultar.PerformClick)
-                {
-                    LimpaControles();
-                    txtCodigoDeBarras.Focus();
-                    txtId.ReadOnly = true;
-                    btnConsultar.Text = "&Consultar";
-                }
+                //if (btnConsultar.PerformClick)
+                //{
+                //    LimpaControles();
+                //    txtCodigoDeBarras.Focus();
+                //    txtId.ReadOnly = true;
+                //    btnConsultar.Text = "&Consultar";
+                //}
             }
         }
 

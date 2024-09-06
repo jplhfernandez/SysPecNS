@@ -63,5 +63,14 @@ namespace SysPecNSDesk
             frmFornecedor.MdiParent = this;
             frmFornecedor.Show();
         }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            FrmLogin frmLogin = new();
+            //(login é filho de principal, principal tem que carregar inteiro para frmlogin aparecer    )frmLogin.MdiParent = this;
+            frmLogin.ShowDialog();
+            Text += $"({Program.UsuarioLogado.Email})"; 
+            toolStripStatusLabel1.Text = $"{Program.UsuarioLogado.Nome} - {Program.UsuarioLogado.Nivel.Nome}";
+        }
     }
 }

@@ -21,7 +21,30 @@ namespace SysPecNSDesk
         private void btnInserir_Click(object sender, EventArgs e)
         {
             Fornecedor fornecedor = new(
+                txtRazaoSocial.Text,
+                txtFantasia.Text,
+                txtCnpj.Text,
+                txtTelefone.Text,
+                txtContato.Text,
+                txtEmail.Text
                 );
+            fornecedor.Inserir();
+            if (fornecedor.Id > 0)
+            {
+                txtId.Text = fornecedor.Id.ToString();
+                MessageBox.Show($"o usuário {fornecedor.Fantasia}, foi gravado com sucesso, com o ID {fornecedor.Id}");
+                txtRazaoSocial.Clear();
+                txtFantasia.Clear();
+                txtCnpj.Clear();
+                txtTelefone.Clear();
+                txtContato.Clear();
+                txtEmail.Clear();
+                txtRazaoSocial.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Falha ao gravar usuário.");
+            }
         }
     }
 }
