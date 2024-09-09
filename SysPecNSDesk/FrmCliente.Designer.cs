@@ -263,6 +263,7 @@
             tabPageEnderecos.TabIndex = 1;
             tabPageEnderecos.Text = "Endereços";
             tabPageEnderecos.UseVisualStyleBackColor = true;
+            tabPageEnderecos.Click += tabPageEnderecos_Click;
             // 
             // btnFechar
             // 

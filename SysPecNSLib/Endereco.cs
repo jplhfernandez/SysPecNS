@@ -41,7 +41,7 @@ namespace SysPecNSLib
             Bairro = bairro;
             Cidade = cidade;
             Uf = uf;
-           Tipo_Endereco = tipo_Endereco;
+            Tipo_Endereco = tipo_Endereco;
         }
 
         public Endereco(int id, Cliente cliente, string? cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipo_Endereco)
@@ -205,8 +205,6 @@ namespace SysPecNSLib
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = $"delete from enderecos where id = {Id}";
             cmd.ExecuteNonQuery();
-
-
         }
     }
 }

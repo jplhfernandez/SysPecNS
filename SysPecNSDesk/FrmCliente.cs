@@ -71,8 +71,6 @@ namespace SysPecNSDesk
         {
             this.tabCliente.SelectedTab = tabPageEnderecos;
             ClienteId = int.Parse(txtId.Text);
-
-
         }
 
 
@@ -147,6 +145,11 @@ namespace SysPecNSDesk
         {
             this.Close();
             //frmCliente.txtId.Text.Clear();
+        }
+
+        private void tabPageEnderecos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

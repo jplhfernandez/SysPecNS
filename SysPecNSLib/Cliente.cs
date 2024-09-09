@@ -180,9 +180,7 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spdatanasc", Data_Nasc);
 
             cmd.ExecuteNonQuery();
-            cmd.Connection.Close();
-
-            
+            cmd.Connection.Close();  
         }
 
         public static void Arquivar(int id)

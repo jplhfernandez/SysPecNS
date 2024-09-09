@@ -43,6 +43,8 @@
             novoToolStripMenuItem3 = new ToolStripMenuItem();
             movimentoToolStripMenuItem = new ToolStripMenuItem();
             pedidosToolStripMenuItem = new ToolStripMenuItem();
+            novoToolStripMenuItem4 = new ToolStripMenuItem();
+            listaDePedidoToolStripMenuItem = new ToolStripMenuItem();
             operaçãoToolStripMenuItem = new ToolStripMenuItem();
             caixaToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
@@ -147,9 +149,23 @@
             // 
             // pedidosToolStripMenuItem
             // 
+            pedidosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem4, listaDePedidoToolStripMenuItem });
             pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            pedidosToolStripMenuItem.Size = new Size(116, 22);
+            pedidosToolStripMenuItem.Size = new Size(180, 22);
             pedidosToolStripMenuItem.Text = "&Pedidos";
+            // 
+            // novoToolStripMenuItem4
+            // 
+            novoToolStripMenuItem4.Name = "novoToolStripMenuItem4";
+            novoToolStripMenuItem4.Size = new Size(180, 22);
+            novoToolStripMenuItem4.Text = "&Novo";
+            novoToolStripMenuItem4.Click += novoToolStripMenuItem4_Click;
+            // 
+            // listaDePedidoToolStripMenuItem
+            // 
+            listaDePedidoToolStripMenuItem.Name = "listaDePedidoToolStripMenuItem";
+            listaDePedidoToolStripMenuItem.Size = new Size(180, 22);
+            listaDePedidoToolStripMenuItem.Text = "&Lista de Pedido";
             // 
             // operaçãoToolStripMenuItem
             // 
@@ -161,7 +177,7 @@
             // caixaToolStripMenuItem
             // 
             caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
-            caixaToolStripMenuItem.Size = new Size(103, 22);
+            caixaToolStripMenuItem.Size = new Size(180, 22);
             caixaToolStripMenuItem.Text = "&Caixa";
             // 
             // sairToolStripMenuItem
@@ -195,7 +211,6 @@
             ClientSize = new Size(800, 450);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
-            Cursor = Cursors.Arrow;
             Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
@@ -232,5 +247,7 @@
         private ToolStripMenuItem novoToolStripMenuItem3;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripMenuItem novoToolStripMenuItem4;
+        private ToolStripMenuItem listaDePedidoToolStripMenuItem;
     }
 }
