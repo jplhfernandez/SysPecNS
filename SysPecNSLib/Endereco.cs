@@ -57,6 +57,17 @@ namespace SysPecNSLib
             Uf = uf;
             Tipo_Endereco = tipo_Endereco;
         }
+        public Endereco(string? cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipo_Endereco)
+        {
+            Cep = cep;
+            Logradouro = logradouro;
+            Numero = numero;
+            Complemento = complemento;
+            Bairro = bairro;
+            Cidade = cidade;
+            Uf = uf;
+            Tipo_Endereco = tipo_Endereco;
+        }
 
         public void Inserir ()
         {
@@ -72,7 +83,6 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spcidade", Cidade);
             cmd.Parameters.AddWithValue("spuf", Uf);
             cmd.Parameters.AddWithValue("sptipo_endereco", Tipo_Endereco);
-
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -107,10 +117,6 @@ namespace SysPecNSLib
             return endereco;
 
         }
-
-        // public static List<endereco> obterlistaporcliente(int clienteId)
-
-        //where cliente_id = {clienteId}
         public static List<Endereco> ObterLista(string? endereco="")
         {
             List<Endereco> enderecos = new();
@@ -174,7 +180,6 @@ namespace SysPecNSLib
             return enderecos;
         }
 
-        //bool
         public void  Atualizar(int id)
         {
             var cmd = Banco.Abrir();

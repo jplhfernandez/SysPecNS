@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
+            grbIdentificacao = new GroupBox();
             textBox3 = new TextBox();
             txtIdCliente = new TextBox();
             label4 = new Label();
@@ -36,27 +36,59 @@
             txtUsuario = new TextBox();
             label3 = new Label();
             label2 = new Label();
-            groupBox2 = new GroupBox();
+            grbItens = new GroupBox();
+            textBox1 = new TextBox();
+            label10 = new Label();
+            txtDescontoItem = new TextBox();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            dvgItensPedido = new DataGridView();
+            clnSeq = new DataGridViewTextBoxColumn();
+            clnCodBar = new DataGridViewTextBoxColumn();
+            clnDescricao = new DataGridViewTextBoxColumn();
+            clnValorUnit = new DataGridViewTextBoxColumn();
+            clnQuantidade = new DataGridViewTextBoxColumn();
+            clnDescontoItem = new DataGridViewTextBoxColumn();
+            clnTotalItem = new DataGridViewTextBoxColumn();
+            txtQuantidade = new TextBox();
+            txtValorUnit = new TextBox();
+            txtDescricao = new TextBox();
+            txtCodBar = new TextBox();
+            btnAdicionarItem = new Button();
             txtIdPedido = new TextBox();
             label1 = new Label();
-            groupBox1.SuspendLayout();
+            btnFechar = new Button();
+            label11 = new Label();
+            label12 = new Label();
+            label13 = new Label();
+            label14 = new Label();
+            txtSubTotal = new TextBox();
+            txtDescontoItens = new TextBox();
+            txtDescontoPedido = new TextBox();
+            txtTotalPedido = new TextBox();
+            grbIdentificacao.SuspendLayout();
+            grbItens.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dvgItensPedido).BeginInit();
             SuspendLayout();
             // 
-            // groupBox1
+            // grbIdentificacao
             // 
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(txtIdCliente);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(btnAbrir);
-            groupBox1.Controls.Add(txtUsuario);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(46, 52);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(674, 121);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Identificação";
+            grbIdentificacao.Controls.Add(textBox3);
+            grbIdentificacao.Controls.Add(txtIdCliente);
+            grbIdentificacao.Controls.Add(label4);
+            grbIdentificacao.Controls.Add(btnAbrir);
+            grbIdentificacao.Controls.Add(txtUsuario);
+            grbIdentificacao.Controls.Add(label3);
+            grbIdentificacao.Controls.Add(label2);
+            grbIdentificacao.Location = new Point(54, 27);
+            grbIdentificacao.Name = "grbIdentificacao";
+            grbIdentificacao.Size = new Size(674, 121);
+            grbIdentificacao.TabIndex = 0;
+            grbIdentificacao.TabStop = false;
+            grbIdentificacao.Text = "Identificação";
             // 
             // textBox3
             // 
@@ -83,9 +115,9 @@
             // 
             // btnAbrir
             // 
-            btnAbrir.Location = new Point(583, 81);
+            btnAbrir.Location = new Point(583, 37);
             btnAbrir.Name = "btnAbrir";
-            btnAbrir.Size = new Size(75, 23);
+            btnAbrir.Size = new Size(75, 67);
             btnAbrir.TabIndex = 3;
             btnAbrir.Text = "Abrir";
             btnAbrir.UseVisualStyleBackColor = true;
@@ -116,18 +148,209 @@
             label2.TabIndex = 0;
             label2.Text = "Usuário";
             // 
-            // groupBox2
+            // grbItens
             // 
-            groupBox2.Location = new Point(46, 179);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(674, 240);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Itens do pedido";
+            grbItens.Controls.Add(textBox1);
+            grbItens.Controls.Add(label10);
+            grbItens.Controls.Add(txtDescontoItem);
+            grbItens.Controls.Add(label9);
+            grbItens.Controls.Add(label8);
+            grbItens.Controls.Add(label7);
+            grbItens.Controls.Add(label6);
+            grbItens.Controls.Add(label5);
+            grbItens.Controls.Add(dvgItensPedido);
+            grbItens.Controls.Add(txtQuantidade);
+            grbItens.Controls.Add(txtValorUnit);
+            grbItens.Controls.Add(txtDescricao);
+            grbItens.Controls.Add(txtCodBar);
+            grbItens.Controls.Add(btnAdicionarItem);
+            grbItens.Enabled = false;
+            grbItens.Location = new Point(54, 154);
+            grbItens.Name = "grbItens";
+            grbItens.Size = new Size(674, 272);
+            grbItens.TabIndex = 1;
+            grbItens.TabStop = false;
+            grbItens.Text = "Itens do pedido";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(583, 238);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(75, 23);
+            textBox1.TabIndex = 13;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(529, 241);
+            label10.Name = "label10";
+            label10.Size = new Size(48, 15);
+            label10.TabIndex = 12;
+            label10.Text = "Total R$";
+            // 
+            // txtDescontoItem
+            // 
+            txtDescontoItem.Location = new Point(494, 39);
+            txtDescontoItem.Name = "txtDescontoItem";
+            txtDescontoItem.Size = new Size(83, 23);
+            txtDescontoItem.TabIndex = 11;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(494, 21);
+            label9.Name = "label9";
+            label9.Size = new Size(57, 15);
+            label9.TabIndex = 10;
+            label9.Text = "Desconto";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(435, 21);
+            label8.Name = "label8";
+            label8.Size = new Size(40, 15);
+            label8.TabIndex = 9;
+            label8.Text = "Quant";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(224, 21);
+            label7.Name = "label7";
+            label7.Size = new Size(58, 15);
+            label7.TabIndex = 8;
+            label7.Text = "Descrição";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(371, 22);
+            label6.Name = "label6";
+            label6.Size = new Size(58, 15);
+            label6.TabIndex = 7;
+            label6.Text = "Valor Unit";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(27, 22);
+            label5.Name = "label5";
+            label5.Size = new Size(97, 15);
+            label5.TabIndex = 6;
+            label5.Text = "Código de Barras";
+            // 
+            // dvgItensPedido
+            // 
+            dvgItensPedido.AllowUserToAddRows = false;
+            dvgItensPedido.AllowUserToDeleteRows = false;
+            dvgItensPedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dvgItensPedido.Columns.AddRange(new DataGridViewColumn[] { clnSeq, clnCodBar, clnDescricao, clnValorUnit, clnQuantidade, clnDescontoItem, clnTotalItem });
+            dvgItensPedido.Location = new Point(27, 69);
+            dvgItensPedido.Name = "dvgItensPedido";
+            dvgItensPedido.ReadOnly = true;
+            dvgItensPedido.RowHeadersVisible = false;
+            dvgItensPedido.Size = new Size(631, 163);
+            dvgItensPedido.TabIndex = 5;
+            // 
+            // clnSeq
+            // 
+            clnSeq.Frozen = true;
+            clnSeq.HeaderText = "#SEQ";
+            clnSeq.Name = "clnSeq";
+            clnSeq.ReadOnly = true;
+            clnSeq.Width = 40;
+            // 
+            // clnCodBar
+            // 
+            clnCodBar.Frozen = true;
+            clnCodBar.HeaderText = "Cod Barras";
+            clnCodBar.Name = "clnCodBar";
+            clnCodBar.ReadOnly = true;
+            clnCodBar.Width = 95;
+            // 
+            // clnDescricao
+            // 
+            clnDescricao.Frozen = true;
+            clnDescricao.HeaderText = "Descrição";
+            clnDescricao.Name = "clnDescricao";
+            clnDescricao.ReadOnly = true;
+            clnDescricao.Width = 200;
+            // 
+            // clnValorUnit
+            // 
+            clnValorUnit.Frozen = true;
+            clnValorUnit.HeaderText = "Valor Unit";
+            clnValorUnit.Name = "clnValorUnit";
+            clnValorUnit.ReadOnly = true;
+            clnValorUnit.Width = 90;
+            // 
+            // clnQuantidade
+            // 
+            clnQuantidade.Frozen = true;
+            clnQuantidade.HeaderText = "Quant";
+            clnQuantidade.Name = "clnQuantidade";
+            clnQuantidade.ReadOnly = true;
+            clnQuantidade.Width = 55;
+            // 
+            // clnDescontoItem
+            // 
+            clnDescontoItem.Frozen = true;
+            clnDescontoItem.HeaderText = "Desconto";
+            clnDescontoItem.Name = "clnDescontoItem";
+            clnDescontoItem.ReadOnly = true;
+            clnDescontoItem.Width = 65;
+            // 
+            // clnTotalItem
+            // 
+            clnTotalItem.Frozen = true;
+            clnTotalItem.HeaderText = "Total";
+            clnTotalItem.Name = "clnTotalItem";
+            clnTotalItem.ReadOnly = true;
+            clnTotalItem.Width = 120;
+            // 
+            // txtQuantidade
+            // 
+            txtQuantidade.Location = new Point(435, 39);
+            txtQuantidade.Name = "txtQuantidade";
+            txtQuantidade.Size = new Size(53, 23);
+            txtQuantidade.TabIndex = 4;
+            // 
+            // txtValorUnit
+            // 
+            txtValorUnit.Location = new Point(371, 39);
+            txtValorUnit.Name = "txtValorUnit";
+            txtValorUnit.Size = new Size(58, 23);
+            txtValorUnit.TabIndex = 3;
+            // 
+            // txtDescricao
+            // 
+            txtDescricao.Location = new Point(224, 39);
+            txtDescricao.Name = "txtDescricao";
+            txtDescricao.Size = new Size(141, 23);
+            txtDescricao.TabIndex = 2;
+            // 
+            // txtCodBar
+            // 
+            txtCodBar.Location = new Point(27, 39);
+            txtCodBar.Name = "txtCodBar";
+            txtCodBar.Size = new Size(191, 23);
+            txtCodBar.TabIndex = 1;
+            txtCodBar.Leave += txtCodBar_Leave;
+            // 
+            // btnAdicionarItem
+            // 
+            btnAdicionarItem.Location = new Point(583, 21);
+            btnAdicionarItem.Name = "btnAdicionarItem";
+            btnAdicionarItem.Size = new Size(75, 41);
+            btnAdicionarItem.TabIndex = 0;
+            btnAdicionarItem.Text = "&Adicionar";
+            btnAdicionarItem.UseVisualStyleBackColor = true;
+            btnAdicionarItem.Click += btnAdicionarItem_Click;
             // 
             // txtIdPedido
             // 
-            txtIdPedido.Location = new Point(748, 52);
+            txtIdPedido.Location = new Point(753, 73);
             txtIdPedido.Name = "txtIdPedido";
             txtIdPedido.Size = new Size(111, 23);
             txtIdPedido.TabIndex = 2;
@@ -135,34 +358,122 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(748, 34);
+            label1.Location = new Point(753, 55);
             label1.Name = "label1";
             label1.Size = new Size(51, 15);
             label1.TabIndex = 3;
             label1.Text = "Número";
             // 
+            // btnFechar
+            // 
+            btnFechar.Location = new Point(773, 388);
+            btnFechar.Name = "btnFechar";
+            btnFechar.Size = new Size(75, 23);
+            btnFechar.TabIndex = 4;
+            btnFechar.Text = "Fechar";
+            btnFechar.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(783, 196);
+            label11.Name = "label11";
+            label11.Size = new Size(52, 15);
+            label11.TabIndex = 5;
+            label11.Text = "SubTotal";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(770, 242);
+            label12.Name = "label12";
+            label12.Size = new Size(85, 15);
+            label12.TabIndex = 6;
+            label12.Text = "Desconto Itens";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(757, 288);
+            label13.Name = "label13";
+            label13.Size = new Size(114, 15);
+            label13.TabIndex = 7;
+            label13.Text = "Desconto do Pedido";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(793, 334);
+            label14.Name = "label14";
+            label14.Size = new Size(32, 15);
+            label14.TabIndex = 8;
+            label14.Text = "Total";
+            // 
+            // txtSubTotal
+            // 
+            txtSubTotal.Location = new Point(763, 215);
+            txtSubTotal.Name = "txtSubTotal";
+            txtSubTotal.ReadOnly = true;
+            txtSubTotal.Size = new Size(100, 23);
+            txtSubTotal.TabIndex = 9;
+            // 
+            // txtDescontoItens
+            // 
+            txtDescontoItens.Location = new Point(764, 261);
+            txtDescontoItens.Name = "txtDescontoItens";
+            txtDescontoItens.ReadOnly = true;
+            txtDescontoItens.Size = new Size(100, 23);
+            txtDescontoItens.TabIndex = 10;
+            // 
+            // txtDescontoPedido
+            // 
+            txtDescontoPedido.Location = new Point(764, 306);
+            txtDescontoPedido.Name = "txtDescontoPedido";
+            txtDescontoPedido.Size = new Size(100, 23);
+            txtDescontoPedido.TabIndex = 11;
+            // 
+            // txtTotalPedido
+            // 
+            txtTotalPedido.Location = new Point(764, 353);
+            txtTotalPedido.Name = "txtTotalPedido";
+            txtTotalPedido.ReadOnly = true;
+            txtTotalPedido.Size = new Size(100, 23);
+            txtTotalPedido.TabIndex = 12;
+            // 
             // FrmPedidoNovo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(959, 452);
+            ClientSize = new Size(896, 452);
+            Controls.Add(txtTotalPedido);
+            Controls.Add(txtDescontoPedido);
+            Controls.Add(txtDescontoItens);
+            Controls.Add(txtSubTotal);
+            Controls.Add(label14);
+            Controls.Add(label13);
+            Controls.Add(label12);
+            Controls.Add(label11);
+            Controls.Add(btnFechar);
             Controls.Add(label1);
             Controls.Add(txtIdPedido);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
+            Controls.Add(grbItens);
+            Controls.Add(grbIdentificacao);
             Name = "FrmPedidoNovo";
             Text = "FrmPedidoNovo";
             Load += FrmPedidoNovo_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            grbIdentificacao.ResumeLayout(false);
+            grbIdentificacao.PerformLayout();
+            grbItens.ResumeLayout(false);
+            grbItens.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dvgItensPedido).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private GroupBox groupBox1;
-        private GroupBox groupBox2;
+        private GroupBox grbIdentificacao;
+        private GroupBox grbItens;
         private TextBox txtIdPedido;
         private Label label1;
         private Label label3;
@@ -172,5 +483,35 @@
         private TextBox txtIdCliente;
         private Label label4;
         private Button btnAbrir;
+        private TextBox txtDescricao;
+        private TextBox txtCodBar;
+        private Button btnAdicionarItem;
+        private TextBox txtQuantidade;
+        private TextBox txtValorUnit;
+        private TextBox txtDescontoItem;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private DataGridView dvgItensPedido;
+        private TextBox textBox1;
+        private Label label10;
+        private Button btnFechar;
+        private Label label11;
+        private Label label12;
+        private Label label13;
+        private Label label14;
+        private TextBox txtSubTotal;
+        private TextBox txtDescontoItens;
+        private TextBox txtDescontoPedido;
+        private TextBox txtTotalPedido;
+        private DataGridViewTextBoxColumn clnSeq;
+        private DataGridViewTextBoxColumn clnCodBar;
+        private DataGridViewTextBoxColumn clnDescricao;
+        private DataGridViewTextBoxColumn clnValorUnit;
+        private DataGridViewTextBoxColumn clnQuantidade;
+        private DataGridViewTextBoxColumn clnDescontoItem;
+        private DataGridViewTextBoxColumn clnTotalItem;
     }
 }
