@@ -45,14 +45,10 @@ namespace SysPecNSDesk
                 btnCadastrarEnd.Enabled = true;
                 btnAdicionarEndereco.Enabled = false;
 
-                //Limpa as informações do formulário
-                //txtId.Clear();
                 txtNome.Clear();
                 txtCpf.Clear();
                 txtTelefone.Clear();
                 txtEmail.Clear();
-
-                //Foca o cursor no campo Nome para a nova inserção
                 txtNome.Focus();
                 //Recarrega a tabela do formulário para exibir o novo usuário na lista
                 FrmCliente_Load(sender, e);
@@ -102,7 +98,6 @@ namespace SysPecNSDesk
                 txtBairro.Clear();
                 txtCidade.Clear();
                 txtUf.Clear();
-
                 btnAdicionarEndereco.Enabled = true;
                 btnSalvarEndereco.Enabled = false;
             }
@@ -117,8 +112,6 @@ namespace SysPecNSDesk
 
             btnSalvarEndereco.Enabled = true;
             btnAdicionarEndereco.Enabled = false;
-
-
             txtCep.Clear();
             txtLogradouro.Clear();
             txtNumero.Clear();
@@ -144,12 +137,39 @@ namespace SysPecNSDesk
         private void btnFechar_Click_1(object sender, EventArgs e)
         {
             this.Close();
-            //frmCliente.txtId.Text.Clear();
         }
 
-        private void tabPageEnderecos_Click(object sender, EventArgs e)
+        private void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBusca.Text.Length > 0)
+            {
+                CarregaGrid(txtBusca.Text);
+            }
+            else
+            {
+                CarregaGrid();
+            }
+        }
+        private void CarregaGrid(string? enderecos = "")
         {
 
+            var enderecos = Endereco.ObterLista();
+            dgvClienteEndereco.Rows.Clear();
+            int cont = 0;
+            foreach (var endereco in enderecos)
+            {
+                dgvClienteEndereco.Rows.Add();
+                dgvClienteEndereco.Rows[cont].Cells[0].Value = endereco.Cliente.Nome;
+                dgvClienteEndereco.Rows[cont].Cells[1].Value = endereco.Cep;
+                dgvClienteEndereco.Rows[cont].Cells[2].Value = endereco.Logradouro;
+                dgvClienteEndereco.Rows[cont].Cells[3].Value = endereco.Numero;
+                dgvClienteEndereco.Rows[cont].Cells[4].Value = endereco.Complemento;
+                dgvClienteEndereco.Rows[cont].Cells[5].Value = endereco.Bairro;
+                dgvClienteEndereco.Rows[cont].Cells[6].Value = endereco.Cidade;
+                dgvClienteEndereco.Rows[cont].Cells[7].Value = endereco.Uf;
+                dgvClienteEndereco.Rows[cont].Cells[8].Value = endereco.Tipo_Endereco;
+                cont++;
+            }
         }
     }
 }

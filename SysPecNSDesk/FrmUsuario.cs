@@ -134,5 +134,10 @@ namespace SysPecNSDesk
             id = Convert.ToInt32(dgvUsuarios.Rows[0].Cells[0].Value);
             MessageBox.Show(id.ToString());
         }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -10,7 +10,6 @@ namespace SysPecNSLib
 {
     public class Cliente
     {
-        //nome, cpf, telefone, email, data_nasc, data_cad, ativo
         public int Id { get; set; }
         public string? Nome { get; set; }
         public string? Cpf { get; set; }
@@ -21,19 +20,12 @@ namespace SysPecNSLib
         public bool Ativo { get; set; }
 
 
-        //com id sem endereco
-
-        //sem id sem endereco sem ativo
-
-        //executescalar
-
 
 
 
 
         public Cliente()
         {
-            //Construtor vazio
         }
 
         public Cliente(int id, string? nome, string? cpf, string? telefone, string? email, DateTime? data_Nasc)
@@ -51,7 +43,6 @@ namespace SysPecNSLib
 
         public Cliente(int id, string? nome, string? cpf, string? telefone, string? email, DateTime? data_Nasc, DateTime data_Cad, bool ativo )
         {
-            //Construtor com todos os campos
             Id = id;
             Nome = nome;
             Cpf = cpf;
@@ -76,8 +67,7 @@ namespace SysPecNSLib
         }
 
         public Cliente(int id, string? nome, string? telefone, DateTime? data_Nasc)
-        {
-            //Construtor sem o ID, para inserção
+        {            
             Id = id;
             Nome = nome;
             Telefone = telefone;
@@ -164,7 +154,6 @@ namespace SysPecNSLib
 
                );
             }
-            //clientes
             return lista;
 
         }

@@ -37,7 +37,7 @@
             label3 = new Label();
             label2 = new Label();
             grbItens = new GroupBox();
-            textBox1 = new TextBox();
+            txtTotal = new TextBox();
             label10 = new Label();
             txtDescontoItem = new TextBox();
             label9 = new Label();
@@ -69,6 +69,7 @@
             txtDescontoItens = new TextBox();
             txtDescontoPedido = new TextBox();
             txtTotalPedido = new TextBox();
+            label15 = new Label();
             grbIdentificacao.SuspendLayout();
             grbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dvgItensPedido).BeginInit();
@@ -150,7 +151,8 @@
             // 
             // grbItens
             // 
-            grbItens.Controls.Add(textBox1);
+            grbItens.Controls.Add(label15);
+            grbItens.Controls.Add(txtTotal);
             grbItens.Controls.Add(label10);
             grbItens.Controls.Add(txtDescontoItem);
             grbItens.Controls.Add(label9);
@@ -172,17 +174,18 @@
             grbItens.TabStop = false;
             grbItens.Text = "Itens do pedido";
             // 
-            // textBox1
+            // txtTotal
             // 
-            textBox1.Location = new Point(583, 238);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(75, 23);
-            textBox1.TabIndex = 13;
+            txtTotal.Location = new Point(583, 237);
+            txtTotal.Name = "txtTotal";
+            txtTotal.RightToLeft = RightToLeft.Yes;
+            txtTotal.Size = new Size(75, 23);
+            txtTotal.TabIndex = 13;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(529, 241);
+            label10.Location = new Point(529, 240);
             label10.Name = "label10";
             label10.Size = new Size(48, 15);
             label10.TabIndex = 12;
@@ -192,7 +195,7 @@
             // 
             txtDescontoItem.Location = new Point(494, 39);
             txtDescontoItem.Name = "txtDescontoItem";
-            txtDescontoItem.Size = new Size(83, 23);
+            txtDescontoItem.Size = new Size(93, 23);
             txtDescontoItem.TabIndex = 11;
             // 
             // label9
@@ -246,7 +249,7 @@
             dvgItensPedido.AllowUserToDeleteRows = false;
             dvgItensPedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dvgItensPedido.Columns.AddRange(new DataGridViewColumn[] { clnSeq, clnCodBar, clnDescricao, clnValorUnit, clnQuantidade, clnDescontoItem, clnTotalItem });
-            dvgItensPedido.Location = new Point(27, 69);
+            dvgItensPedido.Location = new Point(27, 68);
             dvgItensPedido.Name = "dvgItensPedido";
             dvgItensPedido.ReadOnly = true;
             dvgItensPedido.RowHeadersVisible = false;
@@ -340,9 +343,9 @@
             // 
             // btnAdicionarItem
             // 
-            btnAdicionarItem.Location = new Point(583, 21);
+            btnAdicionarItem.Location = new Point(593, 39);
             btnAdicionarItem.Name = "btnAdicionarItem";
-            btnAdicionarItem.Size = new Size(75, 41);
+            btnAdicionarItem.Size = new Size(75, 23);
             btnAdicionarItem.TabIndex = 0;
             btnAdicionarItem.Text = "&Adicionar";
             btnAdicionarItem.UseVisualStyleBackColor = true;
@@ -440,6 +443,16 @@
             txtTotalPedido.Size = new Size(100, 23);
             txtTotalPedido.TabIndex = 12;
             // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.ForeColor = Color.Blue;
+            label15.Location = new Point(548, 21);
+            label15.Name = "label15";
+            label15.Size = new Size(20, 15);
+            label15.TabIndex = 14;
+            label15.Text = "R$";
+            // 
             // FrmPedidoNovo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -495,7 +508,7 @@
         private Label label6;
         private Label label5;
         private DataGridView dvgItensPedido;
-        private TextBox textBox1;
+        private TextBox txtTotal;
         private Label label10;
         private Button btnFechar;
         private Label label11;
@@ -513,5 +526,6 @@
         private DataGridViewTextBoxColumn clnQuantidade;
         private DataGridViewTextBoxColumn clnDescontoItem;
         private DataGridViewTextBoxColumn clnTotalItem;
+        private Label label15;
     }
 }

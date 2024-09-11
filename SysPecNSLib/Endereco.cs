@@ -13,7 +13,6 @@ namespace SysPecNSLib
     public class Endereco
     {
 
-        //id. cliente_id, cep, logradouro, numero, complemento, bairro, cidade, uf, tipo_endereco
         public int Id { get; set; }
         public Cliente Cliente { get; set; }
         public string? Cep {  get; set; }
@@ -195,8 +194,6 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spcidade", Cidade);
             cmd.Parameters.AddWithValue("spuf", Uf);
             cmd.Parameters.AddWithValue("sptipo_endereco", Tipo_Endereco);
-
-            //Quando uma procedure é executada, 0 nenhuma alteração, 1 alterado e -1 falha
             //return cmd.ExecuteNonQuery()>-1?true:false
 
             cmd.ExecuteNonQuery();
@@ -205,7 +202,6 @@ namespace SysPecNSLib
 
         public void Excluir()
         {
-            // em geral nada se exclui de uma tabela...
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = $"delete from enderecos where id = {Id}";
