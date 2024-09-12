@@ -100,6 +100,7 @@ namespace SysPecNSDesk
                 txtUf.Clear();
                 btnAdicionarEndereco.Enabled = true;
                 btnSalvarEndereco.Enabled = false;
+                FrmCliente_Load(sender, e);
             }
             else
             {
@@ -150,10 +151,9 @@ namespace SysPecNSDesk
                 CarregaGrid();
             }
         }
-        private void CarregaGrid(string? enderecos = "")
+        private void CarregaGrid(string logradouro = "")
         {
-
-            var enderecos = Endereco.ObterLista();
+            var enderecos = Endereco.ObterLista(logradouro);
             dgvClienteEndereco.Rows.Clear();
             int cont = 0;
             foreach (var endereco in enderecos)

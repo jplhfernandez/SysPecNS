@@ -129,7 +129,7 @@ namespace SysPecNSLib
         {
             Produto produto = new();
             var cmd = Banco.Abrir();
-            cmd.CommandText = $"select * from produtos where cod_bar = {id}";
+            cmd.CommandText = $"select * from produtos where cod_barras = {id}";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {

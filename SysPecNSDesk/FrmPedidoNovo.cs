@@ -67,7 +67,7 @@ namespace SysPecNSDesk
                 double.Parse(txtQuantidade.Text),
                 double.Parse(txtDescontoItem.Text)
                 );
-
+            item.Inserir();
             produto = new();
             txtDescontoItem.Text = "0";
             txtDescricao.Clear();
@@ -91,17 +91,35 @@ namespace SysPecNSDesk
                 dvgItensPedido.Rows.Add();
                 dvgItensPedido.Rows[linha].Cells[0].Value = /*item.Id*/$"#{linha = 1}";
                 dvgItensPedido.Rows[linha].Cells[1].Value = item.Produto.CodBar;
-                dvgItensPedido.Rows[linha].Cells[1].Value = item.Produto.Descricao;
-                dvgItensPedido.Rows[linha].Cells[1].Value = item.ValorUnit.ToString("#0.00");
-                dvgItensPedido.Rows[linha].Cells[1].Value = item.Quantidade.ToString("#0.000");
-                dvgItensPedido.Rows[linha].Cells[1].Value = item.Desconto.ToString("#0.00");
-                dvgItensPedido.Rows[linha].Cells[1].Value = (item.ValorUnit * item.Quantidade - item.Desconto).ToString("#0.00");
-                linha ++;
+                dvgItensPedido.Rows[linha].Cells[2].Value = item.Produto.Descricao;
+                dvgItensPedido.Rows[linha].Cells[3].Value = item.ValorUnit.ToString("#0.00");
+                dvgItensPedido.Rows[linha].Cells[4].Value = item.Quantidade.ToString("#0.000");
+                dvgItensPedido.Rows[linha].Cells[5].Value = item.Desconto.ToString("#0.00");
+                dvgItensPedido.Rows[linha].Cells[6].Value = (item.ValorUnit * item.Quantidade - item.Desconto).ToString("#0.00");
+                linha++;
                 total += item.ValorUnit * item.Quantidade - item.Desconto;
                 desconto += item.Desconto;
             }
             txtTotal.Text = total.ToString("#0.00");
             txtDescontoItem.Text = desconto.ToString("#0.00");
+            txtSubTotal.Text = (total + desconto).ToString("#0.00");
+
+            txtTotal.Text = total.ToString("#0.00");
+        }
+
+        private void txtDescontoPedido_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDescontoPedido.Text != string.Empty)
+            {
+                double total = double.Parse(txtSubTotal.Text) -
+                    double.Parse(txtDescontoPedido.Text) -
+                    double.Parse(txtDescontoItens.Text);
+                txtTotal.Text = total.ToString("#0.00");
+            }
+            else
+            {
+                txtDescontoPedido.Text = "0,00";
+            }
         }
     }
 }

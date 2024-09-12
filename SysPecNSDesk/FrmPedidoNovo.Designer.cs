@@ -37,6 +37,7 @@
             label3 = new Label();
             label2 = new Label();
             grbItens = new GroupBox();
+            label15 = new Label();
             txtTotal = new TextBox();
             label10 = new Label();
             txtDescontoItem = new TextBox();
@@ -69,7 +70,6 @@
             txtDescontoItens = new TextBox();
             txtDescontoPedido = new TextBox();
             txtTotalPedido = new TextBox();
-            label15 = new Label();
             grbIdentificacao.SuspendLayout();
             grbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dvgItensPedido).BeginInit();
@@ -173,6 +173,16 @@
             grbItens.TabIndex = 1;
             grbItens.TabStop = false;
             grbItens.Text = "Itens do pedido";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.ForeColor = Color.Blue;
+            label15.Location = new Point(548, 21);
+            label15.Name = "label15";
+            label15.Size = new Size(20, 15);
+            label15.TabIndex = 14;
+            label15.Text = "R$";
             // 
             // txtTotal
             // 
@@ -434,6 +444,7 @@
             txtDescontoPedido.Name = "txtDescontoPedido";
             txtDescontoPedido.Size = new Size(100, 23);
             txtDescontoPedido.TabIndex = 11;
+            txtDescontoPedido.TextChanged += txtDescontoPedido_TextChanged;
             // 
             // txtTotalPedido
             // 
@@ -442,16 +453,6 @@
             txtTotalPedido.ReadOnly = true;
             txtTotalPedido.Size = new Size(100, 23);
             txtTotalPedido.TabIndex = 12;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.ForeColor = Color.Blue;
-            label15.Location = new Point(548, 21);
-            label15.Name = "label15";
-            label15.Size = new Size(20, 15);
-            label15.TabIndex = 14;
-            label15.Text = "R$";
             // 
             // FrmPedidoNovo
             // 
