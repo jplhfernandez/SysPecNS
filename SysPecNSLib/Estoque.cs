@@ -28,5 +28,11 @@ namespace SysPecNSLib
             Quantidade = quantidade;
             Data_ultimo_movimento = data_ultimo_movimento;
         }
+
+        public void InserirProduto()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = "";
+        }
     }
 }
