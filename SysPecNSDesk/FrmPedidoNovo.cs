@@ -93,7 +93,7 @@ namespace SysPecNSDesk
                 dvgItensPedido.Rows[linha].Cells[1].Value = item.Produto.CodBar;
                 dvgItensPedido.Rows[linha].Cells[2].Value = item.Produto.Descricao;
                 dvgItensPedido.Rows[linha].Cells[3].Value = item.ValorUnit.ToString("#0.00");
-                dvgItensPedido.Rows[linha].Cells[4].Value = item.Quantidade.ToString("#0.000");
+                dvgItensPedido.Rows[linha].Cells[4].Value = item.Quantidade.ToString("#0");
                 dvgItensPedido.Rows[linha].Cells[5].Value = item.Desconto.ToString("#0.00");
                 dvgItensPedido.Rows[linha].Cells[6].Value = (item.ValorUnit * item.Quantidade - item.Desconto).ToString("#0.00");
                 linha++;
@@ -103,7 +103,6 @@ namespace SysPecNSDesk
             txtTotal.Text = total.ToString("#0.00");
             txtDescontoItem.Text = desconto.ToString("#0.00");
             txtSubTotal.Text = (total + desconto).ToString("#0.00");
-
             txtTotal.Text = total.ToString("#0.00");
         }
 
