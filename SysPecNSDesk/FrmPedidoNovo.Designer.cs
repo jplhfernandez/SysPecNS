@@ -119,7 +119,6 @@
             txtIdCliente.Name = "txtIdCliente";
             txtIdCliente.Size = new Size(113, 27);
             txtIdCliente.TabIndex = 0;
-            txtIdCliente.TextChanged += txtIdCliente_TextChanged;
             // 
             // textBox3
             // 
@@ -472,7 +471,6 @@
             label14.Size = new Size(35, 15);
             label14.TabIndex = 9;
             label14.Text = "Total ";
-            label14.Click += label14_Click;
             // 
             // FrmPedidoNovo
             // 

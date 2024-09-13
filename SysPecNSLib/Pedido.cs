@@ -94,7 +94,6 @@ namespace SysPecNSLib
                     dr.GetDateTime(3),
                     dr.GetString(4),
                     dr.GetDouble(5)
-                    //[Incluir Lista de Itens]
                      ,ItemPedido.ObterListaPorPedido(dr.GetInt32(0))
                      );
             }
@@ -119,18 +118,15 @@ namespace SysPecNSLib
                     dr.GetDateTime(3),
                     dr.GetString(4),
                     dr.GetDouble(5)
-                     //[Incluir Lista de Itens]
                       ,ItemPedido.ObterListaPorPedido(dr.GetInt32(0))
                      )
                     );
             }
             return pedidos;
         }
-        /// <summary>
-        /// Este ... por id de cliente...
-        /// </summary>
+
         /// <param name="id">id do cliente</param>
-        /// <returns>lista de pedidos do cliente informado, caso haja.</returns>
+        /// <returns>lista de pedidos do cliente informado, caso tenha.</returns>
         public static List<Pedido> ObterListaPorCLiente(int id)
         {
             List<Pedido> pedidos = new();

@@ -31,16 +31,16 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
+            txtId = new TextBox();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
+            txtProduto = new TextBox();
+            btnInserir = new Button();
+            btnCancelar = new Button();
             label4 = new Label();
-            groupBox1 = new GroupBox();
-            label5 = new Label();
+            txtQtdEstoque = new GroupBox();
             textBox4 = new TextBox();
-            groupBox1.SuspendLayout();
+            label5 = new Label();
+            txtQtdEstoque.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -56,7 +56,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(47, 43);
+            label2.Location = new Point(32, 44);
             label2.Name = "label2";
             label2.Size = new Size(18, 15);
             label2.TabIndex = 1;
@@ -65,105 +65,106 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(47, 95);
+            label3.Location = new Point(32, 96);
             label3.Name = "label3";
             label3.Size = new Size(131, 15);
             label3.TabIndex = 2;
             label3.Text = "Quantidade no estoque";
             // 
-            // textBox1
+            // txtId
             // 
-            textBox1.Location = new Point(47, 61);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(64, 23);
-            textBox1.TabIndex = 3;
+            txtId.Location = new Point(32, 62);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(64, 23);
+            txtId.TabIndex = 3;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(47, 113);
+            textBox2.Location = new Point(32, 114);
             textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
             textBox2.Size = new Size(131, 23);
             textBox2.TabIndex = 4;
             // 
-            // textBox3
+            // txtProduto
             // 
-            textBox3.Location = new Point(138, 61);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(159, 23);
-            textBox3.TabIndex = 5;
+            txtProduto.Location = new Point(102, 62);
+            txtProduto.Name = "txtProduto";
+            txtProduto.Size = new Size(180, 23);
+            txtProduto.TabIndex = 5;
             // 
-            // button1
+            // btnInserir
             // 
-            button1.Location = new Point(47, 177);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 6;
-            button1.Text = "&Inserir";
-            button1.UseVisualStyleBackColor = true;
+            btnInserir.Location = new Point(32, 178);
+            btnInserir.Name = "btnInserir";
+            btnInserir.Size = new Size(75, 23);
+            btnInserir.TabIndex = 6;
+            btnInserir.Text = "&Inserir";
+            btnInserir.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCancelar
             // 
-            button2.Location = new Point(222, 177);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 7;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            btnCancelar.Location = new Point(207, 178);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.TabIndex = 7;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(138, 43);
+            label4.Location = new Point(102, 44);
             label4.Name = "label4";
             label4.Size = new Size(50, 15);
             label4.TabIndex = 8;
             label4.Text = "Produto";
             // 
-            // groupBox1
+            // txtQtdEstoque
             // 
-            groupBox1.Controls.Add(textBox4);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(35, 60);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(343, 261);
-            groupBox1.TabIndex = 9;
-            groupBox1.TabStop = false;
+            txtQtdEstoque.Controls.Add(textBox4);
+            txtQtdEstoque.Controls.Add(label5);
+            txtQtdEstoque.Controls.Add(label4);
+            txtQtdEstoque.Controls.Add(btnCancelar);
+            txtQtdEstoque.Controls.Add(txtProduto);
+            txtQtdEstoque.Controls.Add(btnInserir);
+            txtQtdEstoque.Controls.Add(textBox2);
+            txtQtdEstoque.Controls.Add(txtId);
+            txtQtdEstoque.Controls.Add(label3);
+            txtQtdEstoque.Controls.Add(label2);
+            txtQtdEstoque.Location = new Point(35, 60);
+            txtQtdEstoque.Name = "txtQtdEstoque";
+            txtQtdEstoque.Size = new Size(343, 261);
+            txtQtdEstoque.TabIndex = 9;
+            txtQtdEstoque.TabStop = false;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(182, 114);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(100, 23);
+            textBox4.TabIndex = 10;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(197, 95);
+            label5.Location = new Point(182, 96);
             label5.Name = "label5";
             label5.Size = new Size(89, 15);
             label5.TabIndex = 9;
             label5.Text = "Nova reposição";
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(197, 113);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 10;
-            // 
             // FrmEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(425, 361);
-            Controls.Add(groupBox1);
+            ClientSize = new Size(420, 361);
+            Controls.Add(txtQtdEstoque);
             Controls.Add(label1);
             Name = "FrmEstoque";
             Text = "FrmEstoque";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            txtQtdEstoque.ResumeLayout(false);
+            txtQtdEstoque.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -173,13 +174,13 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox txtId;
         private TextBox textBox2;
-        private TextBox textBox3;
-        private Button button1;
-        private Button button2;
+        private TextBox txtProduto;
+        private Button btnInserir;
+        private Button btnCancelar;
         private Label label4;
-        private GroupBox groupBox1;
+        private GroupBox txtQtdEstoque;
         private TextBox textBox4;
         private Label label5;
     }

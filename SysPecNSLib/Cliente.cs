@@ -19,11 +19,6 @@ namespace SysPecNSLib
         public DateTime? Data_Cad { get; set; } = DateTime.Now;
         public bool Ativo { get; set; }
 
-
-
-
-
-
         public Cliente()
         {
         }
@@ -94,8 +89,6 @@ namespace SysPecNSLib
             {
                 Id = dr.GetInt32(0);
             }
-
-
         }
 
         public static Cliente ObterPorId(int id)

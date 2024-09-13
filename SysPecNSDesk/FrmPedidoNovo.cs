@@ -36,14 +36,6 @@ namespace SysPecNSDesk
             grbItens.Enabled = true;
             grbIndentificacao.Enabled = false;
             txtCodBar.Focus();
-
-
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -59,12 +51,6 @@ namespace SysPecNSDesk
             {
                 txtDescontoPedido.Text = "0,00";
             }
-
-        }
-
-        private void txtIdCliente_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txtCodBar_Leave(object sender, EventArgs e)
@@ -82,7 +68,6 @@ namespace SysPecNSDesk
                 {
                     txtDescontoItem.Enabled = true;
                     label4.Text = $" {produto.ValorUnit * produto.ClasseDesconto}";
-
                 }
                 txtValorUnit.ReadOnly = true;
                 txtQuantidade.Focus();
@@ -107,9 +92,7 @@ namespace SysPecNSDesk
             txtQuantidade.Text = "1";
             txtCodBar.Clear();
             txtCodBar.Focus();
-
             PreecherGridItens();
-
         }
 
         private void PreecherGridItens()
@@ -137,7 +120,6 @@ namespace SysPecNSDesk
             textBox1.Text = total.ToString("#0.00");
             txtDescontoItens.Text = desconto.ToString("#0.00");
             txtSubTotal.Text = (total + desconto).ToString("#0.00");
-
             txtTotal.Text = total.ToString("#0.00");
         }
 
@@ -145,11 +127,6 @@ namespace SysPecNSDesk
         {
             FrmCliente frmCliente = new();
             frmCliente.ShowDialog();
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
