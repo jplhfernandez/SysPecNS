@@ -15,7 +15,33 @@ namespace SysPecNSLib
         public string Status { get; set; }
         public double Desconto { get; set; }
         public List<ItemPedido> Itens { get; set; }
+        public Pedido()
+        {
 
+        }
+        public Pedido(Usuario usuario, Cliente cliente, DateTime data, string status, double desconto)
+        {
+            Usuario = usuario;
+            Cliente = cliente;
+            Data = data;
+            Status = status;
+            Desconto = desconto;
+        }
+        public Pedido( Usuario usuario, Cliente cliente, double desconto)
+        {
+            Usuario = usuario;
+            Cliente = cliente;
+            Desconto = desconto;
+        }
+        public Pedido(int id, Usuario usuario, Cliente cliente, DateTime data, string status, double desconto)
+        {
+            Id = id;
+            Usuario = usuario;
+            Cliente = cliente;
+            Data = data;
+            Status = status;
+            Desconto = desconto;
+        }
         public Pedido(int id, Usuario usuario, Cliente cliente, DateTime data, string status, double desconto, List<ItemPedido> itens)
         {
             Id = id;
@@ -26,66 +52,41 @@ namespace SysPecNSLib
             Desconto = desconto;
             Itens = itens;
         }
-
-        public Pedido(Usuario usuario, Cliente cliente, DateTime data, string status, double desconto)
-        {
-            Usuario = usuario;
-            Cliente = cliente;
-            Data = data;
-            Status = status;
-            Desconto = desconto;
-        }
-
-        public Pedido(Usuario usuario, Cliente cliente, double desconto)
-        {
-
-            Usuario = usuario;
-            Cliente = cliente;
-            Desconto = desconto;
-        }
-
-        public Pedido() 
-        {
-        
-        }
-
-        public Pedido(int id, Usuario usuario, Cliente cliente, DateTime data, string status, double desconto)
-        {
-            Id = id;
-            Usuario = usuario;
-            Cliente = cliente;
-            Data = data;
-            Status = status;
-            Desconto = desconto;
-        }
-
-        public void Inserir()
+        public void Inserir() 
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "sp_pedido_insert";
-            cmd.Parameters.AddWithValue("spcliente_id",Cliente.Id);
-            cmd.Parameters.AddWithValue("spusuario_id",Usuario.Id);
+            cmd.Parameters.AddWithValue("spcliente_id", Cliente.Id);
+            cmd.Parameters.AddWithValue("spusuario_id", Usuario.Id);
             Id = Convert.ToInt32(cmd.ExecuteScalar());
-        }
 
-        public void Editar()
+        }
+        public void AlterarStatus() 
         {
             var cmd = Banco.Abrir();
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.CommandText = "sp_pedido_update";
-        }
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = $"update pedidos set status = {Status} where id = {Id}";
+            cmd.ExecuteNonQuery();
 
-        public static Pedido ObterPorId(int id)
+        }
+        public void AtualizarDesconto()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = $"update pedidos set desconto = {Desconto} where id = {Id}";
+            cmd.ExecuteNonQuery();
+        }
+        public static Pedido ObterPorId(int id) 
         {
             Pedido pedido = new();
             var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.Text;
             cmd.CommandText = $"select * from pedidos where id = {id}";
             var dr = cmd.ExecuteReader();
-            // retorna 1 registro ou nenhum 
+            // retorna 1 registro ou nenhum registro
             if (dr.Read())
             {
-                //pedido.Id = dr.GetInt32("id");
                 pedido = new(
                     dr.GetInt32(0),
                     Usuario.ObterPorId(dr.GetInt32(1)),
@@ -94,93 +95,90 @@ namespace SysPecNSLib
                     dr.GetString(4),
                     dr.GetDouble(5)
                     //[Incluir Lista de Itens]
-                    // ItemPedido.ObterListaPorPedido(dr.GetInt32(0));
-                    // Classe Abstrata não gera instancias, mas atribiu valores e pode ser usada como classe base.
-                    );
+                     ,ItemPedido.ObterListaPorPedido(dr.GetInt32(0))
+                     );
             }
+
             return pedido;
         }
 
-        public static List<Pedido> ObterLista(/*int idCliente=0, int idUsuario=0*/)
+        public static List<Pedido> ObterLista()
         {
             List<Pedido> pedidos = new();
             var cmd = Banco.Abrir();
-            //if (idCliente == 0 && idUsuario == 0)
-            //{
-            //    cmd.CommandText = $"select * from pedidos";
-            //}
-            //else if (idCliente > 0)
-            //{
-            //}
-            cmd.CommandText = "select * from pedidos";
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = $"select * from pedidos";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                pedidos.Add(new(
+                pedidos.Add(
+                    new(
                     dr.GetInt32(0),
                     Usuario.ObterPorId(dr.GetInt32(1)),
                     Cliente.ObterPorId(dr.GetInt32(2)),
                     dr.GetDateTime(3),
                     dr.GetString(4),
                     dr.GetDouble(5)
-                    ));
+                     //[Incluir Lista de Itens]
+                      ,ItemPedido.ObterListaPorPedido(dr.GetInt32(0))
+                     )
+                    );
             }
-
             return pedidos;
         }
-
-        public static List<Pedido> ObterListaPorCliente(int id)
+        /// <summary>
+        /// Este ... por id de cliente...
+        /// </summary>
+        /// <param name="id">id do cliente</param>
+        /// <returns>lista de pedidos do cliente informado, caso haja.</returns>
+        public static List<Pedido> ObterListaPorCLiente(int id)
         {
             List<Pedido> pedidos = new();
             var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.Text;
             cmd.CommandText = $"select * from pedidos where cliente_id = {id}";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                pedidos.Add(new(
+                pedidos.Add(
+                    new(
                     dr.GetInt32(0),
                     Usuario.ObterPorId(dr.GetInt32(1)),
                     Cliente.ObterPorId(dr.GetInt32(2)),
                     dr.GetDateTime(3),
                     dr.GetString(4),
                     dr.GetDouble(5)
-                    ));
+                     //[Incluir Lista de Itens]
+                      ,ItemPedido.ObterListaPorPedido(dr.GetInt32(0))
+                     )
+                    );
             }
             return pedidos;
         }
-
         public static List<Pedido> ObterListaPorUsuario(int id)
         {
             List<Pedido> pedidos = new();
             var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.Text;
             cmd.CommandText = $"select * from pedidos where usuario_id = {id}";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                pedidos.Add(new(
+                pedidos.Add(
+                    new(
                     dr.GetInt32(0),
                     Usuario.ObterPorId(dr.GetInt32(1)),
                     Cliente.ObterPorId(dr.GetInt32(2)),
                     dr.GetDateTime(3),
                     dr.GetString(4),
                     dr.GetDouble(5)
-                    ));
+                     //[Incluir Lista de Itens]
+                     // ,ItemPedido.ObterListaPorPedido(dr.GetInt32(0))
+                     )
+                    );
             }
             return pedidos;
         }
 
-        public void AlterarStatus()
-        {
-            var cmd = Banco.Abrir();
-            cmd.CommandText = $"update pedidos set status = {Status} where id = {Id}";
-            cmd.ExecuteNonQuery();
-        }
-
-        public void AtualizarDesconto()
-        {
-            var cmd = Banco.Abrir();
-            cmd.CommandText = $"update pedidos set desconto = {Desconto} where id = {Id}";
-            cmd.ExecuteNonQuery();
-        }
     }
 }

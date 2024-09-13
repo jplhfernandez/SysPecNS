@@ -32,7 +32,7 @@ namespace SysPecNSLib
         public void InserirProduto()
         {
             var cmd = Banco.Abrir();
-            cmd.CommandType = "";
+            //cmd.CommandType = "";
         }
     }
 }

@@ -157,7 +157,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(408, 379);
+            ClientSize = new Size(425, 361);
             Controls.Add(groupBox1);
             Controls.Add(label1);
             Name = "FrmEstoque";
